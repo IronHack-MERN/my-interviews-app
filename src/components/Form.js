@@ -21,6 +21,15 @@ const Form = () => {
   // Extract input values
   const { company, recruiter, date, time, technicalTest } = interview;
 
+  // On click addInterview
+  const submitInterview = (e) => {
+    e.preventDefault();
+
+    // Validate
+    // Assign id
+    // Create interview
+  }
+
   return (
     <Fragment>
       <h2>Create </h2>
@@ -71,8 +80,12 @@ const Form = () => {
           value={technicalTest}
           onChange={updateState}
         ></textarea>
-        <button type="submit" className="u-full-width button-primary">
-          ADD apply
+        <button 
+          type="submit" 
+          className="u-full-width button-primary"
+          onClick={submitInterview}
+          >
+          ADD interview
         </button>
       </form>
     </Fragment>
