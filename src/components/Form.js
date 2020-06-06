@@ -10,8 +10,9 @@ const Form = () => {
     technicalTest: "",
   });
 
+  const [error, updateError] = useState(false);
+
   const updateState = (e) => {
-    console.log(`Writing in ${e.target.name}`);
     updateInterview({
       ...interview,
       [e.target.name]: e.target.value,
@@ -26,14 +27,32 @@ const Form = () => {
     e.preventDefault();
 
     // Validate
+    if (
+      company.trim() === "" ||
+      recruiter.trim() === "" ||
+      date.trim() === "" ||
+      time.trim() === "" ||
+      technicalTest.trim() === ""
+    ) {
+      updateError(true);
+      return;
+    }
+
     // Assign id
     // Create interview
-  }
+  };
 
   return (
     <Fragment>
-      <h2>Create </h2>
+      <h2>Create Interview</h2>
 
+      {
+        error ? (
+        <p className="alerta-error">All fields are required</p>
+        ) : (
+        "Nothing"
+        )
+      }
       <form>
         <label>Name</label>
         <input
@@ -80,11 +99,11 @@ const Form = () => {
           value={technicalTest}
           onChange={updateState}
         ></textarea>
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className="u-full-width button-primary"
           onClick={submitInterview}
-          >
+        >
           ADD interview
         </button>
       </form>
