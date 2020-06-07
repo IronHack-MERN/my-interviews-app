@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Interview = ({ interview, removeInterview }) => {
     return ( 
@@ -18,4 +19,9 @@ const Interview = ({ interview, removeInterview }) => {
      );
 }
  
+Interview.propTypes = {
+    interview: PropTypes.object.isRequired,
+    removeInterview: PropTypes.func.isRequired,
+}
+
 export default Interview;

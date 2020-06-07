@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { v4 as uuid } from "uuid";
+import PropTypes from 'prop-types';
 
 const Form = ({ createInterview }) => {
   const [interview, updateInterview] = useState({
@@ -119,5 +120,9 @@ const Form = ({ createInterview }) => {
     </Fragment>
   );
 };
+
+Form.propTypes = {
+  createInterview: PropTypes.func.isRequired
+}
 
 export default Form;

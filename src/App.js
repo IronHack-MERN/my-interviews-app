@@ -6,6 +6,7 @@ import Interview from './components/Interview';
 function App() {
   // Interviews in local storage
   let initialInterviews = JSON.parse(localStorage.getItem('interviews'));
+
   if(!initialInterviews){
     initialInterviews = [];
   }
@@ -13,6 +14,8 @@ function App() {
   const [ interviews, saveInterviews ] = useState([]);
 
   useEffect( () => {
+    let initialInterviews = JSON.parse(localStorage.getItem('interviews'));
+    
     if(initialInterviews){
       localStorage.setItem('interviews', JSON.stringify(interviews));
     } else{
