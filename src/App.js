@@ -1,10 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "./App.css";
 import Form from './components/Form';
 import Interview from './components/Interview';
 
 function App() {
   const [ interviews, saveInterviews ] = useState([]);
+  useEffect( () => {
+    console.log('hola effect');
+  }, [] );
 
   const createInterview = (interview) => {
     saveInterviews([
