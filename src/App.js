@@ -4,10 +4,21 @@ import Form from './components/Form';
 import Interview from './components/Interview';
 
 function App() {
+  // Interviews in local storage
+  let initialInterviews = JSON.parse(localStorage.getItem('interviews'));
+  if(!initialInterviews){
+    initialInterviews = [];
+  }
+
   const [ interviews, saveInterviews ] = useState([]);
+
   useEffect( () => {
-    console.log('hola effect');
-  }, [] );
+    if(initialInterviews){
+      localStorage.setItem('interviews', JSON.stringify(interviews));
+    } else{
+      localStorage.setItem('interviews', JSON.stringify([]))
+    }
+  }, [interviews] );
 
   const createInterview = (interview) => {
     saveInterviews([
