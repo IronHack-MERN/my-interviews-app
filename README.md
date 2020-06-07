@@ -3,6 +3,8 @@
 ## Description
 Project with React.js. This is an app to document a job interviews.
 
+![Exercise-1](./src/img/demo.png)
+
 ## Scripts
 In the project directory, you can run:
 
