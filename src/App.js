@@ -19,6 +19,9 @@ function App() {
     saveInterviews(newInterviews);
   }
 
+  // Conditional message
+  const title = interviews.length === 0 ? `You don't have interviews yet!` : 'Admin your interviews'
+
   return (
     <Fragment>
       <h1>My jobs applications</h1>
@@ -30,7 +33,7 @@ function App() {
             />
           </div>
           <div className="one-half column">
-            <h2>Admin your interviews</h2>
+            <h2>{title}</h2>
             {
               interviews.map( (interview) => (
                 <Interview
