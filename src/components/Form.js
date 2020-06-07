@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from "react";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 const Form = ({ createInterview }) => {
-
   const [interview, updateInterview] = useState({
     company: "",
     recruiter: "",
@@ -47,19 +46,22 @@ const Form = ({ createInterview }) => {
 
     // Create interview
     createInterview(interview);
+
+    // Restart form
+    updateInterview({
+      company: "",
+      recruiter: "",
+      date: "",
+      time: "",
+      technicalTest: "",
+    });
   };
 
   return (
     <Fragment>
       <h2>Create Interview</h2>
 
-      {
-        error ? (
-        <p className="alerta-error">All fields are required</p>
-        ) : (
-        null
-        )
-      }
+      {error ? <p className="alerta-error">All fields are required</p> : null}
       <form>
         <label>Name</label>
         <input
