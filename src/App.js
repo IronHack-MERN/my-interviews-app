@@ -13,6 +13,12 @@ function App() {
     ])
   }
 
+  const removeInterview = (id) => {
+    console.log(`deleteando cita ${id}`)
+    const newInterviews = interviews.filter( interview => interview.id !== id );
+    saveInterviews(newInterviews);
+  }
+
   return (
     <Fragment>
       <h1>My jobs applications</h1>
@@ -30,6 +36,7 @@ function App() {
                 <Interview
                   key = {interview.id}
                   interview = {interview}
+                  removeInterview = {removeInterview}
                 />
             ))}
           </div>
