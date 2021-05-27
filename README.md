@@ -1,4 +1,4 @@
-# My interviews APP
+# My interviews
 
 ## Description
 Project with React.js. This is an app to document a job interviews.
